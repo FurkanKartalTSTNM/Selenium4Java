@@ -45,7 +45,7 @@ public class GoogleSearchTest {
         //String browserName = System.getenv("browser");
 
         // RemoteWebDriver yerine kendi TestiniumSeleniumDriver'ını options ile başlat
-        RemoteWebDriver driver = new TestiniumSeleniumDriver(new URL("http://localhost:4444/wd/hub"), options);
+        RemoteWebDriver driver = new TestiniumSeleniumDriver(new URL("http://host.docker.internal:4444/wd/hub"), options);
 
         driver.get("https://www.amazon.com");
         System.out.println("Page title: " + driver.getTitle());
