@@ -1,8 +1,8 @@
 package com.testinium.selenium4javakartal.baseTest;
 
 import com.testinium.driver.TestiniumSeleniumDriver;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -13,7 +13,7 @@ public abstract class BaseTest {
 
     protected RemoteWebDriver driver;
 
-    @BeforeEach
+    @BeforeAll
     void setUp() throws MalformedURLException {
         ChromeOptions options = new ChromeOptions();
 
@@ -26,7 +26,7 @@ public abstract class BaseTest {
         driver = new TestiniumSeleniumDriver(new URL(remoteUrl), options);
     }
 
-    @AfterEach
+    @AfterAll
     void tearDown() {
         if (driver != null) {
             driver.quit();
