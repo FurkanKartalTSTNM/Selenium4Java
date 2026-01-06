@@ -15,4 +15,16 @@ public class GoogleSearchTest extends BaseTest {
         System.out.println("Page title: " + driver.getTitle());
         assertTrue(driver.getTitle() != null && !driver.getTitle().isEmpty());
     }
+
+    @Test
+    public void openAmazonAndFailOnWrongTitle() {
+        driver.get("https://www.amazon.com");
+
+        // Bilerek yanlış bir beklenti
+        assertEquals(
+                "Google",
+                driver.getTitle(),
+                "Title bilerek yanlış verildi, test fail olmalı"
+        );
+    }
 }
